@@ -7,7 +7,7 @@ import express from"express";
 const configviewEngine =(app)=>{
     app.use(express.static('./src/public'));
     app.set("viewengine","ejs");
-    app.set("views",";/src/views");
+    app.set("views","./src/views");
 
 }
 
