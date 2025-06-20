@@ -4,9 +4,10 @@ const handleHelloWord = (req, res) => {
     return res.render("home.ejs");
 };
 
-const handleUserPage = (req,res) => {
+const handleUserPage = async(req,res) => {
     //model => get data from database
-    return res.render("user.ejs");
+    let userList= await userService.getUserList();
+    return res.render("user.ejs",{userList});
 };
 
 const handleCreateNewUser =( req, res) =>{
@@ -14,7 +15,7 @@ const handleCreateNewUser =( req, res) =>{
     let password = req.body.password;
     let username = req.body.username;
     //userService.createNewUser(email,password,username)
-    userService.getUserList();
+    
     return res.send("handleCreateNewUser")
 }
 module.exports = {
