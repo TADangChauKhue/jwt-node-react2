@@ -13,15 +13,10 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   };
-  // Object relational mapping
   User.init({
     email: DataTypes.STRING,
     password: DataTypes.STRING,
-    username: DataTypes.STRING,
-    address: DataTypes.STRING,
-    phone: DataTypes.STRING,
-    groupeId: DataTypes.INTEGER,
-
+    username: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'User',
