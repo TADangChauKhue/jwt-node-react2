@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      User.belongsTo(models.Group);
+      User.belongsToMany(models.Project,{through: 'Project_User'});
     }
   };
   // Object relational mapping
@@ -19,8 +21,9 @@ module.exports = (sequelize, DataTypes) => {
     password: DataTypes.STRING,
     username: DataTypes.STRING,
     address: DataTypes.STRING,
+    sex:DataTypes.STRING,
     phone: DataTypes.STRING,
-    groupeId: DataTypes.INTEGER,
+    groupId: DataTypes.INTEGER,
 
   }, {
     sequelize,

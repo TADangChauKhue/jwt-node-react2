@@ -11,7 +11,7 @@ module.exports = {
       groupId: {
         type: Sequelize.INTEGER
       },
-      RoleId: {
+      roleId: {
         type: Sequelize.INTEGER
       },
 

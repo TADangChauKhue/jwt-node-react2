@@ -14,6 +14,9 @@ module.exports = {
       password: {
         type: Sequelize.STRING
       },
+      username:{
+        type: Sequelize.STRING
+      },
       address: {
         type: Sequelize.STRING
       },
@@ -33,6 +36,7 @@ module.exports = {
       },
 
       updatedAt: {
+        
         allowNull: false,
         type: Sequelize.DATE
       }
