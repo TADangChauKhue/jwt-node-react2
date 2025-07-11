@@ -1,6 +1,6 @@
 
-const db = require('../models/index');
-const bcrypt = require("bcryptjs");
+import db from "../models/index";
+import bcrypt from "bcryptjs";
 const salt=bcrypt.genSaltSync(10);
 
 const hashUserPassword =(userPassword)=>{
@@ -27,7 +27,7 @@ const registerNewUser =async (rawUserData) =>{
 
     if (isEmailExit==true){
             return{
-                EM:'The_email_already_exit',
+                EM:'The email already exit',
                 EC: 1,
 
         }
@@ -43,13 +43,13 @@ const registerNewUser =async (rawUserData) =>{
     })
 
         return{
-            EM:'A_user_is_created_successfully',
+            EM:'A user is created successfully',
             EC: 0
         }
 
     }catch(e){
         return{
-            EM:'Something_wrong_in_service',
+            EM:'Something wrong in service',
             EC: -2,
         }
 
