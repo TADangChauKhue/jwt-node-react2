@@ -12,7 +12,7 @@ const readFunc = async(req,res) =>{
             DT: data.DT,
              })   
         }else{
-        let data = await userApiService.getAllUser(page,limit);
+        let data = await userApiService.getAllUser();
         return res.status(200).json({
         EM: data.EM,
         EC: data.EC,
