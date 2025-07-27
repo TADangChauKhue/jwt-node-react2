@@ -19,6 +19,6 @@ const readFunc =async(req,res) =>{
     }
 }
 
-export default {
+module.exports = {
     readFunc
 };

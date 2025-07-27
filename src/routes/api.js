@@ -16,7 +16,7 @@ const initApiRoutes=(app)=>{
     router.put("/user/update", userController.updateFunc);
     router.delete("/user/delete", userController.deleteFunc);
 
-    router.get("/group/read",groupController.readFunc);
+    router.get("/group/read", groupController.readFunc);
 
 
 
