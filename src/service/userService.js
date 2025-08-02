@@ -48,11 +48,6 @@ const getUserList =async()=>{
         raw: true,
         nest: true
         });
-    console.log(">>> check new user:", newUser);    
-
-    console.log(">>> check new roles:", roles);
-
-
 
     let users=[];
     users=await db.User.findAll() ;
