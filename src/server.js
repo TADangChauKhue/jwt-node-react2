@@ -25,10 +25,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 createJWT();
 let decodedData=verifyToken("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRXJpYyIsImFkZHJlc3MiOiJoYSBub2kiLCJpYXQiOjE3NTQxNjM4NTZ9.tjdADT3AaLgdER00NmKyCZftG7HkPlaELfxnY2wq2g4")
 console.log(decodedData)
+
 //init web routes
 initWebRoutes(app);
 initApiRoutes(app);
 
+
+app.use((req,res) => {
+    return res.send('404 not found')
+})
 
 app.listen(PORT,()=>{
     console.log(">>> JWT Backend is running on the port = "+PORT);

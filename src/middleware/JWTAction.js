@@ -5,7 +5,7 @@ const createJWT=(payload)=>{
     let token = null;
     try{
         token = jwt.sign(payload,key);
-        console.log(token)
+        // console.log(token)
     }catch(err){
         console.log(err)
 
