@@ -38,7 +38,7 @@ const handleRegister=async(req,res)=>{
 
     }catch(e){
         return res.status(500).json({
-            EM: 'error',
+            EM: 'error from server',
             EC:'-1',//error code
             DT: '',//date
         })
@@ -61,13 +61,31 @@ const handleLogin=async(req,res)=>{
         }
         catch(error){
             return res.status(500).json({
-                EM: 'error',
+                EM: 'error from server',
                 EC:'-1',//error code
                 DT: '',//date
             })           
         }
 
  }
+const handleLogout =(req,res)=>{
+            try{
+            res.clearCookie("jwt")
+            return res.status(200).json({
+            EM: 'clear cookie done',
+            EC: 0,
+            DT: '',
+            })
+        }
+        catch(error){
+            return res.status(500).json({
+                EM: 'error',
+                EC:'-1',//error code
+                DT: '',//date
+            })           
+        }
+}
+
 module.exports = {
-    testApi, handleRegister,handleLogin
+    testApi, handleRegister,handleLogin,handleLogout
 }
